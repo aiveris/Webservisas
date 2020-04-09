@@ -41,26 +41,26 @@ public class Main {
                 if (response.isSuccessful() && response.body() != null) {
                     Countries countries = response.body();
                     Scanner scanner = new Scanner(System.in);
-                    System.out.println("Nurodykite sali");
+                    System.out.println("Enter country");
                     String my_country = scanner.next();
                     for(Stat s: countries.getCountries_stat()){
                         if(s.getCountry_name().toUpperCase().equals(my_country.toUpperCase())){
                             System.out.println(ANSI_BLUE+s.getCountry_name()+ANSI_RESET);
-                            System.out.println("Uzsikretusiu: "+ANSI_YELLOW+s.getActive_cases()+ANSI_RESET);
-                            System.out.println("Mirciu: "+ANSI_RED+s.getDeaths()+ANSI_RESET);
-                            System.out.println("Pagijusiu: "+ANSI_GREEN+s.getTotal_recovered()+ANSI_RESET);
+                            System.out.println("Infected: "+ANSI_YELLOW+s.getActive_cases()+ANSI_RESET);
+                            System.out.println("Deaths: "+ANSI_RED+s.getDeaths()+ANSI_RESET);
+                            System.out.println("Recovered: "+ANSI_GREEN+s.getTotal_recovered()+ANSI_RESET);
                             System.out.println("--------------");
                         }
                     }
                     int counter = 0;
-                    System.out.println("Nurodykite kiek saliu");
+                    System.out.println("How many top countries");
                     int howMany = scanner.nextInt();
                     for(Stat s: countries.getCountries_stat()){
                         if(counter < howMany){
                             System.out.println(ANSI_BLUE+s.getCountry_name()+ANSI_RESET);
-                            System.out.println("Uzsikretusiu: "+ANSI_YELLOW+s.getActive_cases()+ANSI_RESET);
-                            System.out.println("Mirciu: "+ANSI_RED+s.getDeaths()+ANSI_RESET);
-                            System.out.println("Pagijusiu: "+ANSI_GREEN+s.getTotal_recovered()+ANSI_RESET);
+                            System.out.println("Infected: "+ANSI_YELLOW+s.getActive_cases()+ANSI_RESET);
+                            System.out.println("Deaths: "+ANSI_RED+s.getDeaths()+ANSI_RESET);
+                            System.out.println("Recovered: "+ANSI_GREEN+s.getTotal_recovered()+ANSI_RESET);
                             System.out.println("--------------");
                         }
                         counter++;
